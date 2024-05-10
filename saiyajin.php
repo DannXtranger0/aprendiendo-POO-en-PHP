@@ -1,7 +1,14 @@
 <?php
 
 class Saiyajin{
-    public $clase = "Pertenezco a la Clase Saiyajin";
+   
+    #Una propiedad o metodo estatico, siempre será public
+    #Una propiedad declarada como estatic no puede ser accedida con un objeto
+    #de clase instanciado(aunque si es un metodo estatico, si lo puede hacer)
+
+    #Un metodo estatico no puede acceder a los atributos "Normales" de la clase
+    public static $cabello ="Negro";
+     public $clase = "Pertenezco a la Clase Saiyajin";
     #se le puede asignar el tipo de dato a los atributos
     #o no 
     // public string $nombre;
@@ -9,7 +16,7 @@ class Saiyajin{
 
     #El Constructor Property Promotion Recorta el código al millón
     #sin necesidad de declarar los atributos arriba, se crean en el constructor y ya está
-    public function __construct(public $nombre, public $nivel_pelea){
+    public function __construct(private $nombre, public $nivel_pelea){
     //      $this->nombre = $nombre;
     //      $this->nivel_pelea = $nivel;
     }
@@ -22,6 +29,26 @@ class Saiyajin{
     public function nivelDePelea(){
         return "tiene " . $this->nivel_pelea . " puntos de pelea";
     }
+
+    #Setters y Getters
+
+    public function getNombre(){
+        return $this->nombre;
+    }
+
+    public function getNivel_pelea(){
+        return $this -> nivel_pelea;
+    }
+
+    public function setNombre($nombre){
+        $this->nombre = $nombre;
+    }
+
+    public function setNivel_pelea($nivel_pelea){
+        $this -> nivel_pelea = $nivel_pelea;
+    }
+
+
 }
 
 // $goku = new Saiyayin("Goku",1000);

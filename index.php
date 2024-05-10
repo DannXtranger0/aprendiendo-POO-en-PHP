@@ -8,10 +8,15 @@ require_once "superSaiyajin.php";
 
 #Con el nombre del parametro y el valor
 $goku = new Saiyajin(nivel_pelea:5000,nombre:"Goku");
-$gohan = new SuperSaiyajin("Gohan",1200);
+$gohan = new SuperSaiyajin("Gohan",2500);
 
 echo $goku -> Saludar();
 echo $gohan -> Saludar();
 echo $gohan -> transformacion();
+
+$goku -> nivelDePelea();
+echo $gohan -> nivelDePelea();
+echo "<br><br>";
+echo $gohan-> getNombre();
 
 
